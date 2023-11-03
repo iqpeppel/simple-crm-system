@@ -1,1 +1,0 @@
-select food.fid, food.fname, food.fcid, food.fprice from food;
