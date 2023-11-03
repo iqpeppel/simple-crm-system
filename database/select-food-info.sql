@@ -1,1 +1,1 @@
-select food.fid, food.fname, food.fcid, food.fprice from food;
+select food.fid, food.fname, food_category.fcid, food.fprice from food, food_category WHERE food.fcid = food_category.fcid

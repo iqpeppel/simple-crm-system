@@ -16,7 +16,7 @@ simple-crm-system
     │  README.md
     │
     └─db-source
-            crm-food.sql
+            main.sql
             crm.sqlite3
 
 ```
