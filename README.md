@@ -5,6 +5,10 @@ simple-crm-system
 
 ![](./readme_img/代码工作流程.png)
 
+## 项目架构
+
+![](./readme_img/项目架构.png)
+
 ## 项目结构
 
 ```txt
