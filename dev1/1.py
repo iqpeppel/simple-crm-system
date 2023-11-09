@@ -6,7 +6,7 @@ from tortoise.contrib.fastapi import register_tortoise
 from pydantic import BaseModel
 from starlette.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from 计算推荐物品 import tuijian
+from ranked_recommend_goods import tuijian
 import requests
 
 app = FastAPI()
