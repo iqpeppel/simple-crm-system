@@ -48,3 +48,8 @@ def tuijian(class_id, price):
     #print(new_list)
     return(new_list)
 
+if __name__ == "__main__":
+    class_id = 70
+    price = 60
+    result = tuijian(class_id, price)
+    print(result)
