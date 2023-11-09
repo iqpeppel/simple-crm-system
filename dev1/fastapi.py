@@ -6,7 +6,7 @@ from tortoise.contrib.fastapi import register_tortoise
 from pydantic import BaseModel
 from starlette.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from ranked_recommend_goods import tuijian
+from suanfa import ranked_recommend_goods
 import requests
 
 app = FastAPI()
@@ -14,6 +14,7 @@ class ShopObject(BaseModel):
     name:str
     class_id:int
     price:int
+
 templates = Jinja2Templates(directory="templates")
 
 #数据库绑定
@@ -23,12 +24,12 @@ async def index(request:Request):
     return templates.TemplateResponse("post.html",{'request':request})
 
 
-
+#前端访问ip+/crm/端口请求数据，发送Json
 @app.post("/crm/")
 async def tuijian(shopobj:ShopObject):
     tui_list=[]
     tui_list=tuijian(shopobj.class_id,shopobj.price)
-    print(tui_list)
+    #print(tui_list)
     return {"tui_list":tui_list}
 
 
