@@ -6,8 +6,9 @@ from tortoise.contrib.fastapi import register_tortoise
 from pydantic import BaseModel
 from starlette.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from suanfa import ranked_recommend_goods
+from suanfa.ranked_recommend_goods import tuijian
 import requests
+
 
 app = FastAPI()
 class ShopObject(BaseModel):
@@ -26,10 +27,10 @@ async def index(request:Request):
 
 #前端访问ip+/crm/端口请求数据，发送Json
 @app.post("/crm/")
-async def tuijian(shopobj:ShopObject):
+async def tuijiancrm(shopobj:ShopObject):
     tui_list=[]
     tui_list=tuijian(shopobj.class_id,shopobj.price)
-    #print(tui_list)
+    print(tui_list)
     return {"tui_list":tui_list}
 
 

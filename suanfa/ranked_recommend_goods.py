@@ -12,7 +12,7 @@ def connect(sql):
     #     db='crm',  # 数据库名称
     #     charset='utf8'  # 字符编码
     # )
-    connect=sqlite3.connect('../database/db-source/crm.sqlite3')
+    connect=sqlite3.connect('./database/db-source/crm.sqlite3')
     cursor = connect.cursor()   #使用cursor()获取游标
     cursor.execute(sql)     #执行sql语句
     results = cursor.fetchall() #拿到结果
